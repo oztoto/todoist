@@ -1,6 +1,7 @@
 import "./index.module.scss";
 import TaskView from "../../organism/TaskView/index";
 import "../../../styles/reset.scss";
+import "../../../styles/foundation.scss";
 import styles from "./index.module.scss";
 
 function App() {

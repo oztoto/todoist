@@ -1,0 +1,41 @@
+.TaskList {
+  // hoge
+}
+
+.TaskItem {
+  position: relative;
+  font-size: 1.4rem;
+  &__pullDown {
+    // position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 30px;
+  }
+  &__pullDownImage {
+    width: 10px;
+    height: 10px;
+  }
+  &__body {
+    border-bottom: solid 1px #dcdcdc;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  &__children {
+    margin-left: 30px;
+  }
+  &__checkboxCircle {
+    height: 16px;
+    width: 16px;
+    border: 1px solid #dcdcdc;
+    border-radius: 50%;
+  }
+  &__content {
+    margin-left: 10px;
+    padding: 8px 0;
+  }
+  &__arrowIcon {
+    transform: rotate(180deg);
+  }
+}

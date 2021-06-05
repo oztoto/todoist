@@ -17,7 +17,18 @@ const mockDatas = {
         {
           doneFlag: false,
           content: "WEBアプリのマーケティング",
-          children: [],
+          children: [
+            {
+              doneFlag: false,
+              content: "マーケ本1",
+              children: [],
+            },
+            {
+              doneFlag: false,
+              content: "マーケ本2",
+              children: [],
+            },
+          ],
         },
       ],
     },
