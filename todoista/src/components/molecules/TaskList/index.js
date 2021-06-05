@@ -19,18 +19,23 @@ function TaskList(args) {
         <button className={styles.TaskItem__checkbox}>
           <div className={styles.TaskItem__checkboxCircle}></div>
         </button>
-        <div className={styles.TaskItem__content}>{task.content}</div>
-        {task.childIds.length !== 0 && (
-          <div className={styles.TaskItem__childCounter}>
-            <img
-              src={arrowIcon}
-              width="10px"
-              height="10px"
-              className={styles.TaskItem__arrowIcon}
-              alt
-            />
-          </div>
-        )}
+        <div className={styles.TaskItem__content}>
+          <div className={styles.TaskItem__contentText}>{task.content}</div>
+          {task.childIds.length !== 0 && (
+            <div className={styles.TaskItem__childInfos}>
+              <img
+                src={arrowIcon}
+                width="10px"
+                height="10px"
+                className={styles.TaskItem__arrowIcon}
+                alt
+              />
+              <span className={styles.TaskItem__childCounter}>
+                0/{task.childIds.length}
+              </span>
+            </div>
+          )}
+        </div>
       </div>
     </li>
   );

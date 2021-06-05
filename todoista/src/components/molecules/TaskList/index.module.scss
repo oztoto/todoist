@@ -34,9 +34,6 @@
     margin-left: 10px;
     padding: 8px 0;
   }
-  &__arrowIcon {
-    transform: rotate(180deg);
-  }
   &--1 {
     margin-left: 0px;
   }
@@ -51,5 +48,14 @@
   }
   &--5 {
     margin-left: 112px;
+  }
+  &__childCounter {
+    color: #555;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  &__arrowIcon {
+    transform: rotate(180deg);
+    vertical-align: middle;
   }
 }
