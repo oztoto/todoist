@@ -1,10 +1,7 @@
-.TaskList {
-  // hoge
-}
-
 .TaskItem {
   position: relative;
   font-size: 1.4rem;
+  width: 80vw;
   &__pullDown {
     position: absolute;
     left: -30px;
