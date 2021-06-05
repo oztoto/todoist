@@ -1,41 +1,62 @@
 const mockDatas = {
   todoTasks: [
+    // 表示前に親要素の後に子要素が来るように並べ替えが必要
+    // 以下は並べ替え済み
     {
+      id: 1,
       doneFlag: false,
       content: "読みたい本",
-      children: [
-        {
-          doneFlag: false,
-          content: "フリーランスの税金と領収書",
-          children: [],
-        },
-        {
-          doneFlag: false,
-          content: "決算書の読み方",
-          children: [],
-        },
-        {
-          doneFlag: false,
-          content: "WEBアプリのマーケティング",
-          children: [
-            {
-              doneFlag: false,
-              content: "マーケ本1",
-              children: [],
-            },
-            {
-              doneFlag: false,
-              content: "マーケ本2",
-              children: [],
-            },
-          ],
-        },
-      ],
+      layer: 1,
+      parent: null,
+      childIds: [2, 3, 4],
     },
     {
+      id: 2,
+      doneFlag: false,
+      content: "フリーランスの税金と領収書",
+      layer: 2,
+      parentId: 1,
+      childIds: [],
+    },
+    {
+      id: 3,
+      doneFlag: false,
+      content: "決算書の読み方",
+      layer: 2,
+      parentId: 1,
+      childIds: [],
+    },
+    {
+      id: 4,
+      doneFlag: false,
+      content: "WEBアプリのマーケティング",
+      layer: 2,
+      parentId: 1,
+      childIds: [5, 6],
+    },
+    {
+      id: 5,
+      doneFlag: false,
+      content: "マーケ本1",
+      layer: 3,
+      parentId: 4,
+      childIds: [],
+    },
+    {
+      id: 6,
+      doneFlag: false,
+      content: "マーケ本2",
+      layer: 3,
+      parentId: 4,
+      childIds: [],
+    },
+    {
+      id: 7,
       doneFlag: false,
       content: "個人開発のためにマーケ本を探す",
-      children: [],
+      layer: 1,
+      parentId: null,
+      childIds: [],
     },
   ],
 };

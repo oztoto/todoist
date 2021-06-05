@@ -6,7 +6,13 @@ function TaskView() {
   return (
     <div>
       <div className={styles.Section__title}>直近やること</div>
-      <TaskList tasks={mockDatas.todoTasks} />
+      <ul className={styles.Section__body}>
+        {mockDatas.todoTasks.map((task) => {
+          if (!task.doneFlag) {
+            return <TaskList task={task} />;
+          }
+        })}
+      </ul>
     </div>
   );
 }
