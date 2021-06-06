@@ -15,6 +15,12 @@
   &__pullDownImage {
     width: 10px;
     height: 10px;
+    margin-top: 14px;
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+    &--active {
+      transform: rotate(0deg);
+    }
   }
   &__body {
     border-bottom: solid 1px #dcdcdc;
@@ -45,6 +51,15 @@
   }
   &--5 {
     margin-left: 112px;
+  }
+  max-height: 50px;
+  height: auto;
+  transition: all 0.3s;
+  &--hidden {
+    max-height: 0;
+    height: 0;
+    transition: all 0.3s;
+    overflow-y: hidden;
   }
   &__childCounter {
     color: #555;

@@ -8,12 +8,18 @@ function TaskItem(args) {
   return (
     <li
       key={task.id}
-      className={`${styles.TaskItem} ${styles["TaskItem" + "--" + task.layer]}`}
+      className={`${styles.TaskItem} ${
+        styles["TaskItem" + "--" + task.layer]
+      } ${styles["TaskItem--hidde"]}`}
     >
+      {/* 上記のhiddenは敢えてTypoすることでhiddenしないようにしている */}
       <div className={styles.TaskItem__body}>
         {task.childIds.length !== 0 && (
           <button className={styles.TaskItem__pullDown}>
-            <img className={styles.TaskItem__pullDownImage} src={arrowDown} />
+            <img
+              className={`${styles.TaskItem__pullDownImage} ${styles["TaskItem__pullDownImage--active"]}`}
+              src={arrowDown}
+            />
           </button>
         )}
         <button className={styles.TaskItem__checkbox}>
