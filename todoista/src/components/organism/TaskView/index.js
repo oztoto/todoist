@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 import mockDatas from "./mock";
-import TaskList from "../../molecules/TaskList/index";
+import TaskItem from "../../molecules/TaskItem/index";
 
 function TaskView() {
   return (
@@ -9,7 +9,7 @@ function TaskView() {
       <ul className={styles.Section__body}>
         {mockDatas.todoTasks.map((task) => {
           if (!task.doneFlag) {
-            return <TaskList task={task} />;
+            return <TaskItem task={task} />;
           }
         })}
       </ul>
