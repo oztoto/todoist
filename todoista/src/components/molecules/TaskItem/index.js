@@ -9,7 +9,7 @@ function TaskItem(args) {
     <li
       key={task.id}
       className={`${styles.TaskItem} ${
-        styles["TaskItem" + "--" + task.layer]
+        styles["TaskItem--" + task.layer]
       } ${styles["TaskItem--hidde"]}`}
     >
       {/* 上記のhiddenは敢えてTypoすることでhiddenしないようにしている */}

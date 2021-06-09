@@ -7,7 +7,6 @@ const mockDatas = {
       doneFlag: false,
       content: "読みたい本",
       layer: 1,
-      parent: null,
       childIds: [2, 3, 4],
     },
     {
@@ -15,7 +14,6 @@ const mockDatas = {
       doneFlag: false,
       content: "フリーランスの税金と領収書",
       layer: 2,
-      parentId: 1,
       childIds: [],
     },
     {
@@ -23,7 +21,6 @@ const mockDatas = {
       doneFlag: false,
       content: "決算書の読み方",
       layer: 2,
-      parentId: 1,
       childIds: [],
     },
     {
@@ -31,7 +28,6 @@ const mockDatas = {
       doneFlag: false,
       content: "WEBアプリのマーケティング",
       layer: 2,
-      parentId: 1,
       childIds: [5, 6],
     },
     {
@@ -39,7 +35,6 @@ const mockDatas = {
       doneFlag: false,
       content: "マーケ本1",
       layer: 3,
-      parentId: 4,
       childIds: [],
     },
     {
@@ -47,7 +42,6 @@ const mockDatas = {
       doneFlag: false,
       content: "マーケ本2",
       layer: 3,
-      parentId: 4,
       childIds: [],
     },
     {
@@ -55,7 +49,6 @@ const mockDatas = {
       doneFlag: false,
       content: "個人開発のためにマーケ本を探す",
       layer: 1,
-      parentId: null,
       childIds: [],
     },
   ],
