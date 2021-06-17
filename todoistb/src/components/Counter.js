@@ -3,11 +3,13 @@ import { increment, decrement, selectCount } from '../modules/counter';
 export const Counter = () => {
   const counter = useSelector(selectCount);
   const dispatch = useDispatch();
+  console.log(increment);
+  console.log(increment());
   const addCounter = () => {
-    dispatch(increment);
+    dispatch(increment());
   }
   const subCounter = () => {
-    dispatch(decrement);
+    dispatch(decrement());
   }
   return (
     <div>
