@@ -1,13 +1,19 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { setTask, selectTasks } from '../../../modules/tasks'
 import styles from "./index.module.scss";
-import mockDatas from "./mock";
 import TaskItem from "../../molecules/TaskItem/index";
 import AddTaskButton from "../../molecules/AddTaskButton/index";
 // import React, { useState, useEffect } from 'react';
 import React, { useState } from 'react';
 
 function TaskView() {
-  const [tasks, setTasks] = useState(mockDatas.todoTasks);
-  const [content, setContent] = useState('');
+  // const [tasks, setTasks] = useState(todoTasks);
+  // const [content, setContent] = useState('');
+  const tasks = useSelector(selectTasks);
+  const dispatch = useDispatch();
+  const dispatchSetTask = (content) => {
+    dispatch(setTask({ content }));
+  }
   return (
     <div>
       <div className={styles.Section__title}>直近やること</div>
@@ -19,7 +25,7 @@ function TaskView() {
         })}
         {/* 後々Reduxに移行する */}
         <li>
-          <AddTaskButton tasks={tasks} setTasks={setTasks} />
+          <AddTaskButton tasks={tasks} setTasks={dispatchSetTask} />
         </li>
       </ul>
       {/* <button onClick={() => setTasks(tasks.filter(task=>task.id!==deleteTargetId))}>Delete ID={deleteTargetId}</button> */}

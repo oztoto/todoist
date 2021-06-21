@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from "./index.module.scss";
 
-function TaskItem(args) {
+function AddTaskButton(args) {
   console.log(args);
   const [ content, setContent ] = useState('');
   const [tasks, setTasks] = [ args.tasks, args.setTasks ];
@@ -24,13 +24,14 @@ function TaskItem(args) {
 const addTask = (tasks, setTasks, content, setContent) => (e) => {
   e.preventDefault();
   const id = Math.max(...tasks.map(task=>task.id))+1;
-  setTasks([...tasks, {
-    id, 
-    doneFlag: false,
-    content,
-    layer: 1,
-    childIds: []
-  }]);
+  // setTasks([...tasks, {
+  //   id, 
+  //   doneFlag: false,
+  //   content,
+  //   layer: 1,
+  //   childIds: []
+  // }]);
+  setTasks(content);
   setContent("");
 }
 
@@ -39,4 +40,4 @@ const handleChange = (setter) => (e) => {
   setter(newValue);
 }
 
-export default TaskItem;
+export default AddTaskButton;
