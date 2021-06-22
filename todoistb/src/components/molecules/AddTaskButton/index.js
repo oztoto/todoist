@@ -23,14 +23,6 @@ function AddTaskButton(args) {
 
 const addTask = (tasks, setTasks, content, setContent) => (e) => {
   e.preventDefault();
-  const id = Math.max(...tasks.map(task=>task.id))+1;
-  // setTasks([...tasks, {
-  //   id, 
-  //   doneFlag: false,
-  //   content,
-  //   layer: 1,
-  //   childIds: []
-  // }]);
   setTasks(content);
   setContent("");
 }

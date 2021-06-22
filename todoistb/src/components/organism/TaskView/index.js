@@ -3,12 +3,9 @@ import { setTask, selectTasks } from '../../../modules/tasks'
 import styles from "./index.module.scss";
 import TaskItem from "../../molecules/TaskItem/index";
 import AddTaskButton from "../../molecules/AddTaskButton/index";
-// import React, { useState, useEffect } from 'react';
 import React, { useState } from 'react';
 
 function TaskView() {
-  // const [tasks, setTasks] = useState(todoTasks);
-  // const [content, setContent] = useState('');
   const tasks = useSelector(selectTasks);
   const dispatch = useDispatch();
   const dispatchSetTask = (content) => {
