@@ -15,9 +15,18 @@ const taskSlice = createSlice({
 				{ id, doneFlag: false, content, layer: 1, childIds: [] }
 			]
 		},
+		doneTask: (state, {payload: {targetIds}}) => {
+			// [TODO]子要素もまとめてDoneにする
+			return state.map(task => {
+				if (targetIds.includes(task.id)){
+					return {...task, doneFlag: true};
+				}
+				return task;
+			})
+		}
 	}
 })
 
-export const { setTask } = taskSlice.actions;
+export const { setTask, doneTask } = taskSlice.actions;
 export const selectTasks = (state) => state.tasks;
 export const taskReducers = taskSlice.reducer;

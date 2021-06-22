@@ -1,16 +1,20 @@
 import styles from "./index.module.scss";
+import { useDispatch } from 'react-redux';
+import { doneTask } from '../../../modules/tasks'
 // import TaskItem from "../../molecules/TaskItem/index";
 import arrowIcon from "../../../arrow_icon.png";
 import arrowDown from "../../../arrow_down.png";
 
 function TaskItem(args) {
   const task = args.task;
+  const dispatch = useDispatch();
+  const dispatchDoneTask = () => {
+    dispatch(doneTask({targetIds: [task.id, ...task.childIds]}));
+  }
   return (
     <li
       key={task.id}
-      className={`${styles.TaskItem} ${
-        styles["TaskItem--" + task.layer]
-      } ${styles["TaskItem--hidde"]}`}
+      className={`${styles.TaskItem} ${styles["TaskItem--" + task.layer]}`}
     >
       {/* 上記のhiddenは敢えてTypoすることでhiddenしないようにしている */}
       <div className={styles.TaskItem__body}>
@@ -19,10 +23,11 @@ function TaskItem(args) {
             <img
               className={`${styles.TaskItem__pullDownImage} ${styles["TaskItem__pullDownImage--active"]}`}
               src={arrowDown}
+              alt=""
             />
           </button>
         )}
-        <button className={styles.TaskItem__checkbox}>
+        <button className={styles.TaskItem__checkbox} onClick={dispatchDoneTask} >
           <div className={styles.TaskItem__checkboxCircle}></div>
         </button>
         <div className={styles.TaskItem__content}>
