@@ -9,7 +9,7 @@ function TaskItem(args) {
   const task = args.task;
   const dispatch = useDispatch();
   const dispatchDoneTask = () => {
-    dispatch(doneTask({targetIds: [task.id, ...task.childIds]}));
+    dispatch(doneTask({id: task.id}));
   }
   return (
     <li

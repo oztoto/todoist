@@ -3,6 +3,12 @@ import { todoTasks } from './mock';
 
 const initialState = todoTasks;
 
+const getChildIds = (id, tasks) => {
+	console.log(tasks);
+	const task = tasks.filter(task => task.id === id)[0];
+	return task.childIds;
+}
+
 // reducer
 const taskSlice = createSlice({
 	name: 'tasks', // reducers名
@@ -15,7 +21,8 @@ const taskSlice = createSlice({
 				{ id, doneFlag: false, content, layer: 1, childIds: [] }
 			]
 		},
-		doneTask: (state, {payload: {targetIds}}) => {
+		doneTask: (state, {payload: {id}}) => {
+			const targetIds = [id, ...getChildIds(id, state)];
 			// [TODO]子要素もまとめてDoneにする
 			return state.map(task => {
 				if (targetIds.includes(task.id)){
